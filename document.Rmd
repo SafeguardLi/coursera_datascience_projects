@@ -1,0 +1,54 @@
+---
+title: "Document for App Word Cloud for Linkin Park Lyrics"
+author: "Wangzhi Li"
+date: "07/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 0 Introduction to Word Cloud for Linkin Park Lyrics
+
+This is an document for the application *Word Cloud for Linkin Park Lyrics*.
+This document would introduce you to this app.
+
+## 1 What can this app do?
+
+As a big fan of Linkin Park, I want to analyze the lyrics of 20 of their songs and my favorite album *Hybrid Theory (2000)*, so to find out what words they like for the most.
+The function of this app is **using word cloud to show you which words are used most frequently in Linkin Park's songs.**
+
+## 2 How to use it?
+
+### User Interface
+
+The ui of this app is pretty simple. It's composed of three parts: header, left panel and right panel.
+The left panel provides users with two slides to choose the **minimum frequency of words** and **the maximum number of words** to analyze.
+The right panel is the word cloud. 
+![Screenshot of the Word Cloud App](appscreenshot.png)
+
+### Instruction
+
+Users could adjust the word cloud plot by sliding the two bars on the left: 
+
+1. To choose which set of lyrics to analyze, user could select the name and click the change button.
+
+2. To change the minimum frequency of words to analyze, the user could slide the first bar so to adjust the choice of words, i.e. only words with frequency higher than the selected value could be shown in the word cloud. 
+
+3. To change the number of words to be shown in the word cloud, the user could slide the second bar so to set a limitation of number of words on the screen.  
+
+## Acknowledgement
+
+- Lyrics of songs of Linkin Park are cited from <https://www.azlyrics.com/l/linkinpark.html>.
+
+- This app is done by refering to a shiny sample on the shiny gallery website. You could learn more about the word cloud app by clicking [here](https://shiny.rstudio.com/gallery/word-cloud.html)
+
+- The name of songs are analyzed in this app are: 
+```{r list, results='asis', echo=FALSE}
+library(knitr)
+data <- data.frame(No = 1:20, songs_I_pick = c("1 stp Klosr","Burn it down", "Crawling","Faint","Good Goodbye","In the End","Iridescent","Bleed it out","Burning in the skies","Breaking the habit","All for nothing","Forgotten","Hunger Strike","Invisible","Leave out all the rest","Numb","One Step Closer","Part of me","Rolling in the deep","Robot Boy"), songs_in_Hybrid_Theory= c("Papercut","One Step Closer","With You","Points Of Authority","Crawling","Runaway","By Myself","In The End","A Place For My Head","Forgotten","Cure For The Itch","Pushing Me Away","High Voltage[Bonus Track]","","","","","","",""))
+kable(data, caption = "List of 20 Songs")
+```
+
+Thank you for reviewing my project! 
