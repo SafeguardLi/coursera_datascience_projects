@@ -1,0 +1,58 @@
+---
+title: "Pitch App Word Cloud of Linkin Park's Lyrics"
+author: "Wangzhi Li"
+date: "10/07/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Funtion and User Interface
+
+This app analyzes the lyrics of 20 of Linkin Park's songs and of their album *Hybrid Theory (2000)* by using **word cloud** to show which words are used most frequently.
+ 
+![Screenshot of the Word Cloud App](appscreenshot.png)
+
+## Instruction
+
+1. To choose which set of lyrics to analyze, user could select the name and click the change button.
+
+2. User could slide the first bar to change the minimum frequency of words to be shown 
+
+3. User could could slide the second bar to change the number of words to be shown in the word cloud.  
+
+
+
+
+## Acknowledgement & Appendix  
+
+- Lyrics refers to <https://www.azlyrics.com/l/linkinpark.html>.
+
+- This app refers to a shiny sample, [here to learn more](https://shiny.rstudio.com/gallery/word-cloud.html)
+
+The name of 20 songs are: 
+```{r list2, results='asis', echo = FALSE}
+library(knitr)
+data <- data.frame(No = 1:5, 
+                   colum1 = c("1 stp Klosr","Burn it down", "Crawling","Faint","Good Goodbye"),
+                   colum2 = c("Bleed it out","Burning in the skies","Breaking the habit","All for nothing","Forgotten"), 
+                   colum3 = c("Hunger Strike","Invisible","Leave out all the rest","Numb","One Step Closer"), 
+                   colum4 = c("Part of me","Rolling in the deep","Robot Boy","In the End","Iridescent"))
+kable(data, caption = "List of 20 Songs")
+```
+
+***
+Code of the table are:
+```{r list, results='hide', echo=TRUE}
+library(knitr)
+data <- data.frame(No = 1:5, 
+                   colum1 = c("1 stp Klosr","Burn it down", "Crawling","Faint","Good Goodbye"),
+                   colum2 = c("Bleed it out","Burning in the skies","Breaking the habit","All for nothing","Forgotten"), 
+                   colum3 = c("Hunger Strike","Invisible","Leave out all the rest","Numb","One Step Closer"), 
+                   colum4 = c("Part of me","Rolling in the deep","Robot Boy","In the End","Iridescent"))
+kable(data, caption = "List of 20 Songs")
+```
+
+Thank you for reviewing my project! 
